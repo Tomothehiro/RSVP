@@ -15,6 +15,7 @@ import { FooterComponent } from './footer/footer.component';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { LoadingComponent } from './core/loading.component';
 import { UtilsService } from './core/utils.service';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UtilsService } from './core/utils.service';
     HeaderComponent,
     FooterComponent,
     CallbackComponent,
-    LoadingComponent
+    LoadingComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
