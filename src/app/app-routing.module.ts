@@ -25,7 +25,7 @@ const routes: Routes = [
       AdminGuard
     ],
     children: [
-      { 
+      {
         path: '',
         component: AdminComponent
       }

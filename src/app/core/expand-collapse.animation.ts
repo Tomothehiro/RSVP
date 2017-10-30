@@ -12,3 +12,4 @@ export const expandCollapse = trigger('expandCollapse', [
   transition('* => void', animate('250ms ease-out')),
   transition('void => *', animate('250ms ease-in'))
 ]);
+
