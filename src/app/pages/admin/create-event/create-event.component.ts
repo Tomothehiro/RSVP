@@ -8,11 +8,11 @@ import { Title } from '@angular/platform-browser';
 })
 export class CreateEventComponent implements OnInit {
   pageTitle = 'Create Event';
-  
+
     constructor(private title: Title) { }
-  
+
     ngOnInit() {
       this.title.setTitle(this.pageTitle);
-    }  
+    }
 
 }

@@ -52,7 +52,7 @@ export class ApiService {
         })
         .catch(this._handleError);
     }
-  
+
     // PUT existing event (admin only)
     editEvent$(id: string, event: EventModel): Observable<EventModel> {
       return this.http
@@ -61,7 +61,7 @@ export class ApiService {
         })
         .catch(this._handleError);
     }
-  
+
     // DELETE existing event and all associated RSVPs (admin only)
     deleteEvent$(id: string): Observable<any> {
       return this.http
