@@ -52,6 +52,10 @@ export class MyRsvpsComponent implements OnInit, OnDestroy {
   }
 
   private get _getIdp(): string {
+    // sub ex.
+    // google-oauth2|23C94879435023998476321
+    // twitter|34B23492010786950049439
+    // auth0|09C3764109863877665210
     const sub = this.auth.userProfile.sub.split('|')[0];
     let idp = sub;
 
