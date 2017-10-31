@@ -7,6 +7,7 @@ interface AuthConfig {
   REDIRECT: string;
   SCOPE: string;
   NAMESPACE: string;
+  SILENT_REDIRECT: string;
 }
 
 export const AUTH_CONFIG: AuthConfig = {
@@ -15,5 +16,6 @@ export const AUTH_CONFIG: AuthConfig = {
   AUDIENCE: 'http://localhost:8083/api/', // likely http://localhost:8083/api/
   REDIRECT: `${ENV.BASE_URI}/callback`,
   SCOPE: 'openid profile',
-  NAMESPACE: 'http://myapp.com/roles'
+  NAMESPACE: 'http://myapp.com/roles',
+  SILENT_REDIRECT: 'http://localhost:8083/silent',
 };
