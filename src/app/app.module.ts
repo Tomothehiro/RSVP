@@ -4,8 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
-import { EventModule } from './pages/event/event.module';
-import { AdminModule } from './pages/admin/admin.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,9 +23,7 @@ import { MyRsvpsComponent } from './pages/my-rsvps/my-rsvps.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,
-    CoreModule,
-    EventModule,
-    AdminModule
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
