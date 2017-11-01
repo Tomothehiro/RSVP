@@ -17,5 +17,5 @@ export const AUTH_CONFIG: AuthConfig = {
   REDIRECT: `${ENV.BASE_URI}/callback`,
   SCOPE: 'openid profile',
   NAMESPACE: 'http://myapp.com/roles',
-  SILENT_REDIRECT: 'http://localhost:8083/silent',
+  SILENT_REDIRECT: '${ENV.BASE_URI}/silent',
 };
