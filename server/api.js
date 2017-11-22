@@ -9,6 +9,7 @@ const jwks = require('jwks-rsa');
 
 const Event = require('./models/Event');
 const Rsvp = require('./models/Rsvp');
+const Room = require('./models/Room');
 
 /*
  |--------------------------------------
@@ -95,7 +96,7 @@ module.exports = function(app, config) {
   });
 
     // POST a new event
-    app.post('/api/event/new', jwtCheck, adminCheck, (req, res) => {
+    app.post('/api/event/new', jwtCheck, (req, res) => {
       Event.findOne({
         title: req.body.title,
         location: req.body.location,

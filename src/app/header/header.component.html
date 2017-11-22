@@ -30,9 +30,15 @@
       </li>
       <li>
         <a
-          *ngIf="auth.loggedIn && auth.isAdmin"
+          *ngIf="auth.loggedIn"
           routerLink="/admin/event/new"
           routerLinkActive="active">Create Event</a>
+      </li>
+      <li>
+        <a
+          *ngIf="auth.loggedIn && auth.isAdmin"
+          routerLink="/admin/room/new"
+          routerLinkActive="active">Create Room</a>
       </li>
       <li>
           <a
