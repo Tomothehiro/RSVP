@@ -270,4 +270,20 @@ module.exports = function(app, config) {
     });
   });
 
+  // GET list of rooms
+  app.get('/api/rooms', (req, res) => {
+    Room.find((err, rooms) => {
+      let roomsArr = [];
+      if (err) {
+        return res.status(500).send({message: err.message});
+      }
+      if (rooms) {
+        rooms.forEach(room => {
+          roomsArr.push(room);
+        });
+      }
+      res.send(roomsArr);
+    });
+  });
+
 };

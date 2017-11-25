@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 import { ENV } from './env.config';
 import { EventModel } from './models/event.model';
 import { RsvpModel } from './models/rsvp.model';
+import { RoomModel } from './models/room.model';
 
 @Injectable()
 export class ApiService {
@@ -44,7 +45,7 @@ export class ApiService {
       .catch(this._handleError);
   }
 
-    // POST new event (admin only)
+    // POST new event (login required)
     postEvent$(event: EventModel): Observable<EventModel> {
       return this.http
         .post(`${ENV.BASE_API}event/new`, event, {
@@ -102,6 +103,22 @@ export class ApiService {
   getUserEvents$(userId: string): Observable<EventModel[]> {
     return this.http
       .get(`${ENV.BASE_API}events/${userId}`, {
+        headers: new HttpHeaders().set('Authorization', this._authHeader)
+      })
+      .catch(this._handleError);
+  }
+
+  // GET list of public, future events
+  getRooms$(): Observable<RoomModel[]> {
+    return this.http
+      .get(`${ENV.BASE_API}rooms`)
+      .catch(this._handleError);
+  }
+
+  // POST new event (login required)
+  postRoom$(event: RoomModel): Observable<RoomModel> {
+    return this.http
+      .post(`${ENV.BASE_API}room/new`, event, {
         headers: new HttpHeaders().set('Authorization', this._authHeader)
       })
       .catch(this._handleError);

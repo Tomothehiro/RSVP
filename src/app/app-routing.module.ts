@@ -7,6 +7,7 @@ import { MyRsvpsComponent } from './pages/my-rsvps/my-rsvps.component';
 
 import { AuthGuard } from './auth/auth.guard';
 import { AdminGuard } from './auth/admin.guard';
+import { RoomComponent } from './pages/room/room.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    // lazy load for component: AdminComponent, CreateEventComponent, UpdateEventComponent,
+    // lazy load for component: AdminComponent, CreateEventComponent, UpdateEventComponent, CreateRoomComponent
     loadChildren: './pages/admin/admin.module#AdminModule',
     canActivate: [
       AuthGuard,
@@ -37,6 +38,13 @@ const routes: Routes = [
   {
     path: 'my-rsvps',
     component: MyRsvpsComponent,
+    canActivate: [
+      AuthGuard
+    ]
+  },
+  {
+    path: 'room',
+    loadChildren: './pages/room/room.module#RoomModule',
     canActivate: [
       AuthGuard
     ]

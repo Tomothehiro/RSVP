@@ -9,7 +9,6 @@ import { DeleteEventComponent } from './update-event/delete-event/delete-event.c
 
 import { RouterModule } from '@angular/router';
 import { ADMIN_ROUTES } from './admin.routes';
-import { CreateRoomComponent } from './create-room/create-room.component';
 
 @NgModule({
   imports: [
@@ -22,8 +21,7 @@ import { CreateRoomComponent } from './create-room/create-room.component';
     CreateEventComponent,
     UpdateEventComponent,
     EventFormComponent,
-    DeleteEventComponent,
-    CreateRoomComponent
+    DeleteEventComponent
   ]
 })
 export class AdminModule { }

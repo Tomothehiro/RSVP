@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CallbackComponent } from './pages/callback/callback.component';
 import { MyRsvpsComponent } from './pages/my-rsvps/my-rsvps.component';
+import { RoomComponent } from './pages/room/room.component';
+import { RoomFormComponent } from './pages/room/room-form/room-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CallbackComponent,
-    MyRsvpsComponent
+    MyRsvpsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,55 @@
+<!-- src/app/pages/home/home.component.html -->
+<h1 class="text-center">{{pageTitle}}</h1>
+<app-loading *ngIf="loading"></app-loading>
+
+<ng-template [ngIf]="utils.isLoaded(loading)">
+  <ng-template [ngIf]="roomList">
+    <ng-template [ngIf]="roomList.length">
+
+      <!-- Search rooms -->
+      <section class="search input-group mb-3">
+        <label class="input-group-addon" for="search">Search</label>
+        <input
+          id="search"
+          type="text"
+          class="form-control"
+          [(ngModel)]="query"
+          (keyup)="searchrooms()" />
+        <span class="input-group-btn">
+          <button
+            class="btn btn-danger"
+            (click)="resetQuery()"
+            [disabled]="!query">&times;</button>
+        </span>
+      </section>
+
+      <!-- No search results -->
+      <p *ngIf="fs.noSearchResults(filteredRooms, query)" class="alert alert-warning">
+        No rooms found for <em class="text-danger">{{query}}</em>, sorry!
+      </p>
+
+      <!-- rooms listing -->
+      <section class="list-group">
+        <a
+          *ngFor="let room of fs.orderByDate(filteredRooms, 'startDatetime')"
+          [routerLink]="['/room', room._id]"
+          class="list-group-item list-group-item-action flex-column align-items-start">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1" [innerHTML]="room.name"></h5>
+          </div>
+        </a>
+      </section>
+    </ng-template>
+
+    <!-- No upcoming public rooms available -->
+    <p *ngIf="!roomList.length" class="alert alert-info">
+      No rooms available.
+    </p>
+  </ng-template>
+
+  <!-- Error loading rooms -->
+  <p *ngIf="error" class="alert alert-danger">
+    <strong>Oops!</strong> There was an error retrieving room data.
+  </p>
+
+</ng-template>
