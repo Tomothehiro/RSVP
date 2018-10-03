@@ -3,6 +3,8 @@ MeanRsvp
 
 ### [Demo](https://rsvp.tomohiro-sato.com)
 
+For Demo purpose, Auth0 is configured to give you admin rights if you login with Gmail.
+
 Simple RSVP application using Angular.js, Node.js, and Auth0.
 
 Installing and Running
